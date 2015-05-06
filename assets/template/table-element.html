@@ -1,0 +1,17 @@
+<a class="elm" ng-if="!element.period" ng-class="setCellColor()" ng-href="./#/element/{{element.number}}" ng-style="element.pos">
+    <div class="cname" ng-if="sailortable.mode === 'C'">{{element.cname}}</div>
+    <div class="ename" ng-if="sailortable.mode === 'E'">{{element.ename}}</div>
+    <div class="jname" ng-if="sailortable.mode === 'J'">{{element.jname}}</div>
+    <div class="symbol" ng-if="sailortable.mode === 'S'">{{element.symbol}}</div>
+</a>
+
+<section class="elm-empty" ng-if="element.period <= 3">
+</section>
+
+<section class="elm elm-lanthanoid" ng-if="element.period === 6" ng-class="{'ready': sailortable.ready}">
+    <div>Lanthanoid Series</div>
+</section>
+
+<section class="elm elm-actinoid" ng-if="element.period === 7" ng-class="{'ready': sailortable.ready}">
+    <div>Actinoid Series</div>
+</section>

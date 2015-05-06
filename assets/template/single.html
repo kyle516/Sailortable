@@ -1,0 +1,56 @@
+<div id="single" class="single-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="eight columns left">
+                <div class="number">{{element.number}}</div>
+                <h2>{{element.ename}}</h2>
+                <div class="data">atomic weight: <span>{{element.weight}}</span></div>
+                <div class="data">category: <span>{{element.category}}</span></div>
+                <p class="description">
+                    {{element.description}}
+                </p>
+            </div>
+            <div class="four columns right">
+                <h1>{{element.symbol}}</h1>
+                <h3>{{element.cname}}</h3>
+                <h4>{{element.jname}}</h4>
+            </div>
+        </div>
+        <nav>
+            <div class="row">
+                <div class="two columns">
+                    <a ng-href="./#/element/{{element.number - 1}}" ng-hide="element.number === 1">
+                        <i class="fa fa-5x fa-play fa-flip-horizontal"></i>
+                        <bdi>{{sailortable.allElem[element.number - 2].number}}<span>{{sailortable.allElem[element.number - 2].symbol}}</span></bdi>
+                    </a>
+                    &nbsp;
+                </div>
+                <div class="eight columns">
+                    <table id="subtable">
+                        <tr ng-repeat="period in sailortable.res.data">
+                            <td ng-repeat="_element in period.elements">
+                                <section>
+                                    <a href="./#/element/{{_element.number}}" ng-class="{'empty': !_element.number, 'focus': _element.number === element.number}" ng-mouseenter="_element.hover = true" ng-mouseleave="_element.hover = false"></a>
+                                </section>
+                            </td>
+                        </tr>
+                    </table>
+                    <a class="button button-primary" style="margin-top: 2rem" ng-href="./#/"><i class="fa fa-table"></i> BACK TO LARGE TABLE</a>
+                </div>
+                <div class="two columns">
+                    <a ng-href="./#/element/{{element.number + 1}}" ng-hide="element.number === 118">
+                        <i class="fa fa-5x fa-play"></i>
+                        <bdi>{{sailortable.allElem[element.number].number}}<span>{{sailortable.allElem[element.number].symbol}}</span></bdi>
+                    </a>
+                    &nbsp;
+                </div>
+            </div>
+        </nav>
+    </div>
+    <ul class="shell-no">
+        <li ng-repeat="s in element.shell track by $index">{{s}}</li>
+    </ul>
+    <ul class="shell-na">
+        <li ng-repeat="sn in shell | limitTo: element.shell.length">{{sn}}</li>
+    </ul>
+</div>

@@ -1,0 +1,125 @@
+<div class="container">
+    <div class="row">
+        <header id="header" ng-class="{'ready': sailortable.ready}">
+            <div class="one-half column">
+                <nav>
+                    <button ng-click="sailortable.mode = 'S'" ng-class="{'focus': sailortable.mode === 'S'}">SYMBOL</button>
+                    <button ng-click="sailortable.mode = 'C'" ng-class="{'focus': sailortable.mode === 'C'}">CHINESE</button>
+                    <button ng-click="sailortable.mode = 'J'" ng-class="{'focus': sailortable.mode === 'J'}">JAPANESE</button>
+                    <button ng-click="sailortable.mode = 'E'" ng-class="{'focus': sailortable.mode === 'E'}">ENGLISH</button>
+                </nav>
+            </div>
+            <div class="one-half column">
+                <h1><strong>SAILOR</strong>TABLE</h1>
+                <bdi>The periodic table for mandarin learners</bdi>
+            </div>
+        </header>
+        <table id="maintable">
+            <tr ng-repeat="period in sailortable.res.data">
+                <td ng-repeat="element in period.elements">
+                    <table-element></table-element>
+                </td>
+            </tr>
+        </table>
+        <table id="sampletable" ng-class="{'ready': sailortable.ready}" style="margin-top: 2%">
+            <tr>
+                <td>
+                    <div class="elm">
+                    </div>
+                </td>
+                <td>
+                    <div class="elm">
+                    </div>
+                </td>
+                <td>
+                    <div class="elm">
+                    </div>
+                </td>
+                <td>
+                    <div class="elm">
+                    </div>
+                </td>
+                <td>
+                    <div class="elm type-a">
+                        <div class="ename">Alkali Metal</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="elm type-b">
+                        <div class="ename">Alkaline Earth Metal</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="elm type-c">
+                        <div class="ename">Transitional Metal</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="elm type-d">
+                        <div class="ename">Halogen</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="elm type-e">
+                        <div class="ename">Noble Gas</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="elm type-f">
+                        <div class="ename">Nonmetal</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="elm type-g">
+                        <div class="ename">Metalloid</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="elm type-h">
+                        <div class="ename">Base Metal</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="elm type-i">
+                        <div class="ename">Lanthanoid</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="elm type-j">
+                        <div class="ename">Actinoid</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="elm">
+                    </div>
+                </td>
+                <td>
+                    <div class="elm">
+                    </div>
+                </td>
+                <td>
+                    <div class="elm">
+                    </div>
+                </td>
+                <td>
+                    <div class="elm">
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <footer class="copy container" ng-class="{'ready': sailortable.ready}">
+            <div class="row">
+                <div class="five columns">
+                    <small>Copyright &copy; 2015 Kyle IDETA.</small>
+                </div>
+                <div class="seven columns socials">
+                    <a class="button" href="https://github.com/kyle516/Sailortable"><i class="fa fa-github"></i> GITHUB</a>
+                    <a class="button" href="https://www.facebook.com/kyle.ideta"><i class="fa fa-facebook-official"></i> FACEBOOK</a>
+                    <a class="button" href="https://twitter.com/plus886"><i class="fa fa-twitter"></i> TWITTER</a>
+                    <a class="button" href="http://kyleideta.info"><i class="fa fa-user"></i> ME</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

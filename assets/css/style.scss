@@ -1,0 +1,527 @@
+@import 'bourbon/bourbon';
+
+///// Colors
+$color-black: #212121;
+$color-white: #ffffff;
+$color-gray: #aaaaaa;
+$color-A: #f44336;
+$color-B: #ff9800;
+$color-C: #ffc107;
+$color-D: #8bc34a;
+$color-E: #009688;
+$color-F: #00bcd4;
+$color-G: #2196f3;
+$color-H: #3f51b5;
+$color-I: #9c27b0;
+$color-J: #e91e63;
+$color-A-d: #d32f2f;
+$color-B-d: #f57c00;
+$color-C-d: #fbc02d;
+$color-D-d: #689f38;
+$color-E-d: #00796b;
+$color-F-d: #0097a7;
+$color-G-d: #1976d2;
+$color-H-d: #303f9f;
+$color-I-d: #7b1fa2;
+$color-J-d: #c2185b;
+
+
+///// Fonts
+@include font-face("Chinese Element", "../fonts/chineseElement", $file-formats: eot woff);
+@include font-face("Japanese Element", "../fonts/japaneseElement", $file-formats: eot woff);
+@include font-face("Japanese Element M", "../fonts/japaneseElementM", $file-formats: eot woff);
+
+
+
+///// Mixins
+@mixin setColor($color, $mode: null) {
+  border-color: $color;
+  color: $color-white;
+  background-color: $color;
+  @if ($mode == null){
+    &:hover {
+      color: $color;
+      background-color: $color-white;
+    }
+  }
+}
+@mixin setVerticalCenter {
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+
+
+
+///// Add to Skeleton
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  @include transition(all .5s ease-in-out);
+}
+.button.focus,
+button.focus,
+input[type="submit"].focus,
+input[type="reset"].focus,
+input[type="button"].focus {
+  color: #333;
+  border-color: #888;
+  outline: 0; }
+
+
+
+
+///// Main CSS
+body, html, .outer-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+
+.outer-wrap {
+  overflow: hidden;
+  &.ready {
+    overflow: auto;
+  }
+}
+
+
+
+#header {
+  color: $color-gray;
+  opacity: 0;
+  &.ready {
+    opacity: 1;
+  }
+  > .column {
+    padding: 2em 0;
+  }
+  h1 {
+    text-align: right;
+    margin-bottom: 0;
+    line-height: 1em;
+    & + bdi {
+      display: block;
+      text-align: right;
+    }
+  }
+  @include transition(all .5s ease-in-out);
+}
+
+
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  &.type-a {
+    @include setColor($color-A-d, single);
+  }
+  &.type-b {
+    @include setColor($color-B-d, single);
+  }
+  &.type-c {
+    @include setColor($color-C-d, single);
+  }
+  &.type-d {
+    @include setColor($color-D-d, single);
+  }
+  &.type-e {
+    @include setColor($color-E-d, single);
+  }
+  &.type-f {
+    @include setColor($color-F-d, single);
+  }
+  &.type-g {
+    @include setColor($color-G-d, single);
+  }
+  &.type-h {
+    @include setColor($color-H-d, single);
+  }
+  &.type-i {
+    @include setColor($color-I-d, single);
+  }
+  &.type-j{
+    @include setColor($color-J-d, single);
+  }
+  &.type-k {
+    @include setColor($color-black, single);
+  }
+  @include transition(all .2s ease);
+}
+
+
+
+#view {
+  opacity: 1;
+  min-height: 100%;
+  @include transition(all .2s ease);
+  &.ng-enter, &.ng-leave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  &.ng-enter {
+    opacity: 0;
+  }
+  &.ng-leave {
+    opacity: 1;
+  }
+  &.ng-enter-active {
+    opacity: 1;
+  }
+  &.ng-leave-active {
+    opacity: 0;
+  }
+}
+
+
+
+#maintable, #sampletable {
+  font-size: 1.2rem;
+  margin-top: 5%;
+  tr {
+    td {
+      padding: 2px;
+      border-bottom: none;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+      .elm {
+        position: relative;
+        display: block;
+        width: 64px;
+        height: 64px;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        text-align: center;
+        text-decoration: none;
+        &.elm-lanthanoid, &.elm-actinoid {
+          opacity: 0;
+          &.ready {
+            opacity: 1;
+          }
+        }
+        &.type-a {
+          @include setColor($color-A);
+        }
+        &.type-b {
+          @include setColor($color-B);
+        }
+        &.type-c {
+          @include setColor($color-C);
+        }
+        &.type-d {
+          @include setColor($color-D);
+        }
+        &.type-e {
+          @include setColor($color-E);
+        }
+        &.type-f {
+          @include setColor($color-F);
+        }
+        &.type-g {
+          @include setColor($color-G);
+        }
+        &.type-h {
+          @include setColor($color-H);
+        }
+        &.type-i, &.elm-lanthanoid {
+          @include setColor($color-I);
+        }
+        &.type-j, &.elm-actinoid {
+          @include setColor($color-J);
+        }
+        &.type-k {
+          @include setColor($color-gray);
+        }
+        > div {
+          @include setVerticalCenter;
+        }
+        .symbol {
+          font-weight: 700;
+          font-size: 3.2rem;
+        }
+        .ename {
+          font-weight: 400;
+          font-size: 1.1rem;
+        }
+        .cname {
+          font-family: 'Chinese Element';
+          font-size: 3rem;
+        }
+        .jname {
+          font-family: 'Japanese Element M';
+          font-size: 1.2rem;
+        }
+        @include transition(all .5s ease-in-out);
+      }
+    }
+  }
+}
+
+
+
+#sampletable {
+  opacity: 0;
+  &.ready {
+    opacity: 1;
+  }
+  @include transition(all .5s ease-in-out);
+}
+
+
+
+#single {
+  color: $color-white;
+  a {
+    color: $color-white;
+    opacity: .5;
+    text-decoration: none;
+    @include transition(all .3s ease-in-out);
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &.single-wrap {
+    min-height: 100%;
+    position: relative;
+  }
+  h1 {
+    font-weight: 700;
+    line-height: 1em;
+  }
+  h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    line-height: 1em;
+    border-bottom: 3px solid rgba(255,255,255,.3);
+  }
+  h3 {
+    font-family: 'Chinese Element';
+    line-height: 1em;
+    min-height: 1em;
+  }
+  h4 {
+    font-family: 'Japanese Element';
+    font-size: 3rem;
+    line-height: 1em;
+  }
+  .number {
+    font-weight: 300;
+    font-size: 10rem;
+    opacity: .4;
+  }
+  .left {
+    text-align: right;
+  }
+  .data {
+    font-size: .9em;
+    font-weight: 300;
+    text-transform: uppercase;
+    opacity: .4;
+    line-height: 3.5em;
+    > span {
+      font-weight: 700;
+      padding-left: 1rem;
+      vertical-align: middle;
+      font-size: 3.5rem;
+    }
+  }
+  .description {
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 1.5em;
+    margin-top: 2rem;
+    opacity: .7;
+    @include transition(all .3s ease-in-out);
+    &:hover {
+      font-size: 1.6rem;
+      opacity: 1;
+    }
+    &:first-letter {
+      font-size: 4rem;
+      font-weight: 700;
+      opacity: 1;
+    }
+  }
+  .shell-no, .shell-na {
+    position: absolute;
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    opacity: .5;
+    > li {
+      margin-top: 3em;
+    }
+  }
+  nav {
+    margin-top: 5rem;
+    text-align: center;
+    .columns {
+      text-align: center;
+    }
+    a {
+      display: inline-block;
+      > {
+        vertical-align: middle;
+      }
+      bdi {
+        display: block;
+        font-weight: 700;
+        font-size: 3.5rem;
+        span {
+          font-size: 6rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+#subtable {
+  margin: 0 auto;
+  td {
+    padding: 2px;
+    border: none;
+    section {
+      position: relative;
+      > a {
+        display: block;
+        background: $color-white;
+        &.empty {
+          display: none;
+        }
+        &.focus {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+footer.copy {
+  &.container {
+    width: 100%;
+  }
+  margin-bottom: 2rem;
+  opacity: 0;
+  @include transition(all .3s ease-in-out);
+  &.ready {
+    opacity: 1;
+  }
+  .socials {
+    text-align: right;
+  }
+}
+
+
+///// Media Queries
+/* Larger than mobile */
+@media (min-width: 200px) {
+  #single {
+    h1 {
+      font-size: 20rem;
+    }
+    h2 {
+      font-size: 5rem;
+    }
+    h3 {
+      font-size: 10rem;
+    }
+    .shell-no {
+      left: 5px;
+      bottom: 5px;
+    }
+    .shell-na {
+      right: 5px;
+      bottom: 5px;
+    }
+  }
+  #subtable {
+    td {
+      section {
+        > a {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
+}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+  #single  {
+    h2 {
+      font-size: 7rem;
+    }
+    h3 {
+      font-size: 12rem;
+    }
+    .shell-no {
+      left: 2em;
+      bottom: 1em;
+    }
+    .shell-na {
+      right: 2em;
+      bottom: 1em;
+    }
+  }
+  #subtable {
+    td {
+      section {
+        > a {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  #single {
+    h1 {
+      font-size: 24rem;
+    }
+    h2 {
+      font-size: 9rem;
+    }
+    h3 {
+      font-size: 16rem;
+    }
+  }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+  #single {
+    h1 {
+      font-size: 30rem;
+    }
+    h2 {
+      font-size: 11rem;
+    }
+  }
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}

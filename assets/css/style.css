@@ -1,0 +1,435 @@
+@font-face {
+  font-family: "Chinese Element";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/chineseElement.eot?#iefix") format("embedded-opentype"), url("../fonts/chineseElement.woff") format("woff"); }
+@font-face {
+  font-family: "Japanese Element";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/japaneseElement.eot?#iefix") format("embedded-opentype"), url("../fonts/japaneseElement.woff") format("woff"); }
+@font-face {
+  font-family: "Japanese Element M";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/japaneseElementM.eot?#iefix") format("embedded-opentype"), url("../fonts/japaneseElementM.woff") format("woff"); }
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+
+.button.focus,
+button.focus,
+input[type="submit"].focus,
+input[type="reset"].focus,
+input[type="button"].focus {
+  color: #333;
+  border-color: #888;
+  outline: 0; }
+
+body, html, .outer-wrap {
+  width: 100%;
+  height: 100%; }
+
+.outer-wrap {
+  overflow: hidden; }
+  .outer-wrap.ready {
+    overflow: auto; }
+
+#header {
+  color: #aaaaaa;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+  #header.ready {
+    opacity: 1; }
+  #header > .column {
+    padding: 2em 0; }
+  #header h1 {
+    text-align: right;
+    margin-bottom: 0;
+    line-height: 1em; }
+    #header h1 + bdi {
+      display: block;
+      text-align: right; }
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  #bg.type-a {
+    border-color: #d32f2f;
+    color: #ffffff;
+    background-color: #d32f2f; }
+  #bg.type-b {
+    border-color: #f57c00;
+    color: #ffffff;
+    background-color: #f57c00; }
+  #bg.type-c {
+    border-color: #fbc02d;
+    color: #ffffff;
+    background-color: #fbc02d; }
+  #bg.type-d {
+    border-color: #689f38;
+    color: #ffffff;
+    background-color: #689f38; }
+  #bg.type-e {
+    border-color: #00796b;
+    color: #ffffff;
+    background-color: #00796b; }
+  #bg.type-f {
+    border-color: #0097a7;
+    color: #ffffff;
+    background-color: #0097a7; }
+  #bg.type-g {
+    border-color: #1976d2;
+    color: #ffffff;
+    background-color: #1976d2; }
+  #bg.type-h {
+    border-color: #303f9f;
+    color: #ffffff;
+    background-color: #303f9f; }
+  #bg.type-i {
+    border-color: #7b1fa2;
+    color: #ffffff;
+    background-color: #7b1fa2; }
+  #bg.type-j {
+    border-color: #c2185b;
+    color: #ffffff;
+    background-color: #c2185b; }
+  #bg.type-k {
+    border-color: #212121;
+    color: #ffffff;
+    background-color: #212121; }
+
+#view {
+  opacity: 1;
+  min-height: 100%;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  #view.ng-enter, #view.ng-leave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; }
+  #view.ng-enter {
+    opacity: 0; }
+  #view.ng-leave {
+    opacity: 1; }
+  #view.ng-enter-active {
+    opacity: 1; }
+  #view.ng-leave-active {
+    opacity: 0; }
+
+#maintable, #sampletable {
+  font-size: 1.2rem;
+  margin-top: 5%; }
+  #maintable tr td, #sampletable tr td {
+    padding: 2px;
+    border-bottom: none; }
+    #maintable tr td:first-child, #sampletable tr td:first-child {
+      padding-left: 0; }
+    #maintable tr td:last-child, #sampletable tr td:last-child {
+      padding-right: 0; }
+    #maintable tr td .elm, #sampletable tr td .elm {
+      position: relative;
+      display: block;
+      width: 64px;
+      height: 64px;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+      text-align: center;
+      text-decoration: none;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
+      #maintable tr td .elm.elm-lanthanoid, #maintable tr td .elm.elm-actinoid, #sampletable tr td .elm.elm-lanthanoid, #sampletable tr td .elm.elm-actinoid {
+        opacity: 0; }
+        #maintable tr td .elm.elm-lanthanoid.ready, #maintable tr td .elm.elm-actinoid.ready, #sampletable tr td .elm.elm-lanthanoid.ready, #sampletable tr td .elm.elm-actinoid.ready {
+          opacity: 1; }
+      #maintable tr td .elm.type-a, #sampletable tr td .elm.type-a {
+        border-color: #f44336;
+        color: #ffffff;
+        background-color: #f44336; }
+        #maintable tr td .elm.type-a:hover, #sampletable tr td .elm.type-a:hover {
+          color: #f44336;
+          background-color: #ffffff; }
+      #maintable tr td .elm.type-b, #sampletable tr td .elm.type-b {
+        border-color: #ff9800;
+        color: #ffffff;
+        background-color: #ff9800; }
+        #maintable tr td .elm.type-b:hover, #sampletable tr td .elm.type-b:hover {
+          color: #ff9800;
+          background-color: #ffffff; }
+      #maintable tr td .elm.type-c, #sampletable tr td .elm.type-c {
+        border-color: #ffc107;
+        color: #ffffff;
+        background-color: #ffc107; }
+        #maintable tr td .elm.type-c:hover, #sampletable tr td .elm.type-c:hover {
+          color: #ffc107;
+          background-color: #ffffff; }
+      #maintable tr td .elm.type-d, #sampletable tr td .elm.type-d {
+        border-color: #8bc34a;
+        color: #ffffff;
+        background-color: #8bc34a; }
+        #maintable tr td .elm.type-d:hover, #sampletable tr td .elm.type-d:hover {
+          color: #8bc34a;
+          background-color: #ffffff; }
+      #maintable tr td .elm.type-e, #sampletable tr td .elm.type-e {
+        border-color: #009688;
+        color: #ffffff;
+        background-color: #009688; }
+        #maintable tr td .elm.type-e:hover, #sampletable tr td .elm.type-e:hover {
+          color: #009688;
+          background-color: #ffffff; }
+      #maintable tr td .elm.type-f, #sampletable tr td .elm.type-f {
+        border-color: #00bcd4;
+        color: #ffffff;
+        background-color: #00bcd4; }
+        #maintable tr td .elm.type-f:hover, #sampletable tr td .elm.type-f:hover {
+          color: #00bcd4;
+          background-color: #ffffff; }
+      #maintable tr td .elm.type-g, #sampletable tr td .elm.type-g {
+        border-color: #2196f3;
+        color: #ffffff;
+        background-color: #2196f3; }
+        #maintable tr td .elm.type-g:hover, #sampletable tr td .elm.type-g:hover {
+          color: #2196f3;
+          background-color: #ffffff; }
+      #maintable tr td .elm.type-h, #sampletable tr td .elm.type-h {
+        border-color: #3f51b5;
+        color: #ffffff;
+        background-color: #3f51b5; }
+        #maintable tr td .elm.type-h:hover, #sampletable tr td .elm.type-h:hover {
+          color: #3f51b5;
+          background-color: #ffffff; }
+      #maintable tr td .elm.type-i, #maintable tr td .elm.elm-lanthanoid, #sampletable tr td .elm.type-i, #sampletable tr td .elm.elm-lanthanoid {
+        border-color: #9c27b0;
+        color: #ffffff;
+        background-color: #9c27b0; }
+        #maintable tr td .elm.type-i:hover, #maintable tr td .elm.elm-lanthanoid:hover, #sampletable tr td .elm.type-i:hover, #sampletable tr td .elm.elm-lanthanoid:hover {
+          color: #9c27b0;
+          background-color: #ffffff; }
+      #maintable tr td .elm.type-j, #maintable tr td .elm.elm-actinoid, #sampletable tr td .elm.type-j, #sampletable tr td .elm.elm-actinoid {
+        border-color: #e91e63;
+        color: #ffffff;
+        background-color: #e91e63; }
+        #maintable tr td .elm.type-j:hover, #maintable tr td .elm.elm-actinoid:hover, #sampletable tr td .elm.type-j:hover, #sampletable tr td .elm.elm-actinoid:hover {
+          color: #e91e63;
+          background-color: #ffffff; }
+      #maintable tr td .elm.type-k, #sampletable tr td .elm.type-k {
+        border-color: #aaaaaa;
+        color: #ffffff;
+        background-color: #aaaaaa; }
+        #maintable tr td .elm.type-k:hover, #sampletable tr td .elm.type-k:hover {
+          color: #aaaaaa;
+          background-color: #ffffff; }
+      #maintable tr td .elm > div, #sampletable tr td .elm > div {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%); }
+      #maintable tr td .elm .symbol, #sampletable tr td .elm .symbol {
+        font-weight: 700;
+        font-size: 3.2rem; }
+      #maintable tr td .elm .ename, #sampletable tr td .elm .ename {
+        font-weight: 400;
+        font-size: 1.1rem; }
+      #maintable tr td .elm .cname, #sampletable tr td .elm .cname {
+        font-family: 'Chinese Element';
+        font-size: 3rem; }
+      #maintable tr td .elm .jname, #sampletable tr td .elm .jname {
+        font-family: 'Japanese Element M';
+        font-size: 1.2rem; }
+
+#sampletable {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+  #sampletable.ready {
+    opacity: 1; }
+
+#single {
+  color: #ffffff; }
+  #single a {
+    color: #ffffff;
+    opacity: .5;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    #single a:hover {
+      opacity: 1; }
+  #single.single-wrap {
+    min-height: 100%;
+    position: relative; }
+  #single h1 {
+    font-weight: 700;
+    line-height: 1em; }
+  #single h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    line-height: 1em;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3); }
+  #single h3 {
+    font-family: 'Chinese Element';
+    line-height: 1em;
+    min-height: 1em; }
+  #single h4 {
+    font-family: 'Japanese Element';
+    font-size: 3rem;
+    line-height: 1em; }
+  #single .number {
+    font-weight: 300;
+    font-size: 10rem;
+    opacity: .4; }
+  #single .left {
+    text-align: right; }
+  #single .data {
+    font-size: .9em;
+    font-weight: 300;
+    text-transform: uppercase;
+    opacity: .4;
+    line-height: 3.5em; }
+    #single .data > span {
+      font-weight: 700;
+      padding-left: 1rem;
+      vertical-align: middle;
+      font-size: 3.5rem; }
+  #single .description {
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 1.5em;
+    margin-top: 2rem;
+    opacity: .7;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    #single .description:hover {
+      font-size: 1.6rem;
+      opacity: 1; }
+    #single .description:first-letter {
+      font-size: 4rem;
+      font-weight: 700;
+      opacity: 1; }
+  #single .shell-no, #single .shell-na {
+    position: absolute;
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    opacity: .5; }
+    #single .shell-no > li, #single .shell-na > li {
+      margin-top: 3em; }
+  #single nav {
+    margin-top: 5rem;
+    text-align: center; }
+    #single nav .columns {
+      text-align: center; }
+    #single nav a {
+      display: inline-block; }
+      #single nav a > {
+        vertical-align: middle; }
+      #single nav a bdi {
+        display: block;
+        font-weight: 700;
+        font-size: 3.5rem; }
+        #single nav a bdi span {
+          font-size: 6rem; }
+
+#subtable {
+  margin: 0 auto; }
+  #subtable td {
+    padding: 2px;
+    border: none; }
+    #subtable td section {
+      position: relative; }
+      #subtable td section > a {
+        display: block;
+        background: #ffffff; }
+        #subtable td section > a.empty {
+          display: none; }
+        #subtable td section > a.focus {
+          opacity: 1; }
+
+footer.copy {
+  margin-bottom: 2rem;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  footer.copy.container {
+    width: 100%; }
+  footer.copy.ready {
+    opacity: 1; }
+  footer.copy .socials {
+    text-align: right; }
+
+/* Larger than mobile */
+@media (min-width: 200px) {
+  #single h1 {
+    font-size: 20rem; }
+  #single h2 {
+    font-size: 5rem; }
+  #single h3 {
+    font-size: 10rem; }
+  #single .shell-no {
+    left: 5px;
+    bottom: 5px; }
+  #single .shell-na {
+    right: 5px;
+    bottom: 5px; }
+
+  #subtable td section > a {
+    width: 10px;
+    height: 10px; } }
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+  #single h2 {
+    font-size: 7rem; }
+  #single h3 {
+    font-size: 12rem; }
+  #single .shell-no {
+    left: 2em;
+    bottom: 1em; }
+  #single .shell-na {
+    right: 2em;
+    bottom: 1em; }
+
+  #subtable td section > a {
+    width: 15px;
+    height: 15px; } }
+/* Larger than tablet */
+@media (min-width: 750px) {
+  #single h1 {
+    font-size: 24rem; }
+  #single h2 {
+    font-size: 9rem; }
+  #single h3 {
+    font-size: 16rem; } }
+/* Larger than desktop */
+@media (min-width: 1000px) {
+  #single h1 {
+    font-size: 30rem; }
+  #single h2 {
+    font-size: 11rem; } }
+/* Larger than Desktop HD */
+
+/*# sourceMappingURL=style.css.map */

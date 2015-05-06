@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sailortable</title>
+    <meta name="description" content="The periodic table for mandarin learners.">
+    <meta name="author" content="KYLEIDETA.INFO">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/skeleton.css">
+    <link rel="stylesheet" href="assets/css/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="assets/js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="assets/js/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="assets/js/angular/angular-animate.min.js"></script>
+    <script type="text/javascript" src="assets/js/angular/angular-resource.min.js"></script>
+    <script type="text/javascript" src="assets/js/apps.js"></script>
+
+    <!-- Open Graph --->
+    <meta property="og:title" content="Sailortable">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://sailortable.kyleideta.info/">
+    <meta property="og:site_name" content="KYLEIDETA.INFO">
+    <meta property="og:description" content="The periodic table for mandarin learners.">
+    <meta property="og:image" content="http://sailortable.kyleideta.info/assets/images/st.png">
+
+
+</head>
+
+<body ng-app="app">
+    <section class="outer-wrap" sailor-table ng-class="{'ready': sailortable.ready}">
+        <div id="bg" ng-class="setColor()"></div>
+        <div id="view" ng-view></div>
+    </section>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&appId=1528073167461206&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+</body>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-56524089-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</html>
